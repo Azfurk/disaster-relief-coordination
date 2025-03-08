@@ -1,23 +1,21 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  ImageBackground,
-} from "react-native";
-import { useRouter } from "expo-router";
+
+import React, { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
+import RNPickerSelect from 'react-native-picker-select';
 
 export default function SignupScreen() {
   const router = useRouter();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [bloodGroup, setBloodGroup] = useState('');
+  const [skills, setSkills] = useState('');
 
   const handleSignup = () => {
-    if (!username || !password || !confirmPassword) {
-      alert("Please fill all fields");
+    if (!username || !password || !confirmPassword || !phoneNumber || !bloodGroup || !skills) {
+      alert('Please fill all fields');
       return;
     }
     if (password !== confirmPassword) {
@@ -25,8 +23,12 @@ export default function SignupScreen() {
       return;
     }
 
+
     alert("Signup successful! Redirecting to Provide Assistance.");
     router.push("/provideAssistance");
+
+    
+
   };
 
   return (
@@ -45,14 +47,55 @@ export default function SignupScreen() {
           onChangeText={setUsername}
         />
 
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          placeholderTextColor="#ffffffbb"
-          secureTextEntry
-          value={password}
-          onChangeText={setPassword}
-        />
+      <TextInput
+        style={styles.input}
+        placeholder="Phone Number"
+        keyboardType="phone-pad"
+        value={phoneNumber}
+        onChangeText={setPhoneNumber}
+      />
+
+<View style={styles.input}>
+  <RNPickerSelect
+    onValueChange={(value) => setBloodGroup(value)}
+    items={[
+      { label: 'A+', value: 'A+' },
+      { label: 'A-', value: 'A-' },
+      { label: 'B+', value: 'B+' },
+      { label: 'B-', value: 'B-' },
+      { label: 'O+', value: 'O+' },
+      { label: 'O-', value: 'O-' },
+      { label: 'AB+', value: 'AB+' },
+      { label: 'AB-', value: 'AB-' },
+    ]}
+    placeholder={{ label: 'Select Blood Group', value: null }}
+    style={pickerSelectStyles}
+  />
+</View>
+
+<View style={styles.input}>
+  <RNPickerSelect
+    onValueChange={(value) => setSkills(value)}
+    items={[
+      { label: 'First Aid', value: 'first_aid' },
+      { label: 'Cooking', value: 'cooking' },
+      { label: 'Logistics', value: 'logistics' },
+      { label: 'Childcare', value: 'childcare' },
+    ]}
+    placeholder={{ label: 'Select Skills', value: null }}
+    style={pickerSelectStyles}
+  />
+</View>
+
+
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        secureTextEntry
+        value={password}
+        onChangeText={setPassword}
+      />
+
 
         <TextInput
           style={styles.input}
@@ -131,3 +174,27 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
   },
 });
+const pickerSelectStyles = {
+  inputIOS: {
+    width: '80%',
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    marginBottom: 15,
+    color: 'black',
+    textAlign: 'left', // Align text like inputs
+    backgroundColor: 'white', // Make it look like input fields
+  },
+  inputAndroid: {
+    width: '80%',
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 5,
+    marginBottom: 15,
+    color: 'black',
+    textAlign: 'left', // Align text like inputs
+    backgroundColor: 'white', // Make it look like input fields
+  },
+};

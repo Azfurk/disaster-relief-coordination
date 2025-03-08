@@ -20,38 +20,23 @@ export default function NeedAssistance() {
         <Text style={styles.title}>Request Assistance</Text>
         <Text style={styles.subtitle}>Select what you need</Text>
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.optionButton}
-            onPress={() => router.push("/assistanceDetails?category=food")}
-          >
-            <Text style={styles.buttonText}>🍽️ Food</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.optionButton}
-            onPress={() => router.push("/assistanceDetails?category=water")}
-          >
-            <Text style={styles.buttonText}>💧 Water</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.optionButton}
-            onPress={() => router.push("/assistanceDetails?category=medical")}
-          >
-            <Text style={styles.buttonText}>🩺 Medical</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.optionButton}
-            onPress={() => router.push("/assistanceDetails?category=labor")}
-          >
-            <Text style={styles.buttonText}>⚒️ Labor</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.sosButton}
-            onPress={() => router.push("/assistanceDetails?category=sos")}
-          >
-            <Text style={styles.buttonText}>🚨 SOS</Text>
-          </TouchableOpacity>
-        </View>
+
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
+          <Text style={styles.buttonText}>Food</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
+          <Text style={styles.buttonText}>Water</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
+          <Text style={styles.buttonText}>Medical</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
+          <Text style={styles.buttonText}>Labor</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
+          <Text style={styles.buttonText}>SOS</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
