@@ -9,22 +9,17 @@ export default function ProvideAssistanceMain() {
     <View style={styles.container}>
       <Text style={styles.title}>Provide Assistance</Text>
 
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/provideAssistance/food')}>
-        <Text style={styles.buttonText}>Food Assistance</Text>
+      {/* NGO Matching Option */}
+      <TouchableOpacity style={styles.button} onPress={() => router.push('/NGOMatching')}>
+        <Text style={styles.buttonText}>Find NGOs to Assist</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/provideAssistance/water')}>
-        <Text style={styles.buttonText}>Water Assistance</Text>
+      {/* Donation Option */}
+      <TouchableOpacity style={styles.button} onPress={() => router.push('/DonateResources')}>
+        <Text style={styles.buttonText}>Donate Resources</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/provideAssistance/medical')}>
-        <Text style={styles.buttonText}>Medical Assistance</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/provideAssistance/shelter')}>
-        <Text style={styles.buttonText}>Shelter Assistance</Text>
-      </TouchableOpacity>
-
+      {/* Back to Home */}
       <TouchableOpacity style={styles.backButton} onPress={() => router.replace('/')}>
         <Text style={styles.buttonText}>Back to Home</Text>
       </TouchableOpacity>

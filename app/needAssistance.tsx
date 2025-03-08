@@ -11,19 +11,19 @@ export default function NeedAssistance() {
       <Text style={styles.subtitle}>Select what you need</Text>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/assistanceDetails?category=food')}>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
           <Text style={styles.buttonText}>Food</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/assistanceDetails?category=water')}>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
           <Text style={styles.buttonText}>Water</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/assistanceDetails?category=medical')}>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
           <Text style={styles.buttonText}>Medical</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/assistanceDetails?category=labor')}>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
           <Text style={styles.buttonText}>Labor</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/assistanceDetails?category=sos')}>
+        <TouchableOpacity style={styles.optionButton} onPress={() => router.push('/confirmationpage')}>
           <Text style={styles.buttonText}>SOS</Text>
         </TouchableOpacity>
       </View>
